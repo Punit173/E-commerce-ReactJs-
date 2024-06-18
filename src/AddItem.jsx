@@ -1,25 +1,39 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 const AddItem = () => {
 
     const dispatch = useDispatch();
-    
+    const [name,setName] = useState ('');
+    const [url,setUrl] = useState ('');
+    const [price,setPrice] = useState ('');
+
+    const information = {
+        name : name,
+        url : url,
+        price : price
+    }
+
+    const update = ()=>{
+        alert("Data uploaded successfully!!");
+        dispatch({type:'Upload',payload:information})
+    }
 
     return (
         <div style={{padding:"50px"}}>
             <form>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Product Name</label>
-                    <input type="text" className="form-control" aria-describedby="emailHelp" />
+                    <input type="text" className="form-control" onChange={(e)=>{setName(e.target.value)}} aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputPassword1" className="form-label">Product Image URL</label>
-                    <input type="text" className="form-control"  />
+                    <input type="text" className="form-control" onChange={(e)=>{setUrl(e.target.value)}}  />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputPassword1" className="form-label">Product Rate</label>
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" onChange={(e)=>{setPrice(e.target.value)}} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
@@ -30,7 +44,7 @@ const AddItem = () => {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" htmlFor="exampleCheck1">Agree to <a href="">Terms & Conditions</a></label>
                 </div>
-                <button type="submit" className="btn btn-primary">Upload</button>
+                <button type="submit" className="btn btn-primary" onClick={update}>Upload</button>
             </form>
 
         </div>

@@ -6,14 +6,15 @@ const initialData = {
     prod_quantity : []
 }
 
-console.log(initialData);
 
 const Reducer =  (state=initialData,action)=>{
     switch (action.type) {
         case 'Upload':
             return {
                 ...state,
-                prod_name : action.payload
+                prod_name : [...state,action.payload.name],
+                prod_rate : [...state,action.payload.price],
+                prod_url : [...state,action.payload.url] 
             }
     
         default:
