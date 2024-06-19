@@ -11,15 +11,14 @@ const Cart = () => {
     const [itemname,setName] = useState('');
 
     const infomatics = useSelector((store => store.cartreducer))
-    const compo = infomatics.prod_name.map((e) => {
-        // setName(e);
+    const compo = infomatics.name.map((e) => {
         return <CartTable key={e.id} element={e} />
     })
-    const compo1 = infomatics.prod_rate.map((e) => {
+    const compo1 = infomatics.price.map((e) => {
         return <CartTable1 key={e.id} element={e} />
     })
 
-    const compo2 = infomatics.prod_rate.map((e) => {
+    const compo2 = infomatics.price.map((e) => {
         return <CartTable2 key={e.id} element={itemname} />
     })
 
