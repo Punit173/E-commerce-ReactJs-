@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Navbar = () => {
-    const info = useSelector((state)=>state);
+    const info = useSelector(store=>store.cartreducer);
     console.log(info)
   return (
     <>
@@ -23,7 +23,7 @@ const Navbar = () => {
                                     <Link className="nav-link" to='/additem'>ADD ITEM</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to='/cart'>CART : {info.prod_name.length}</Link>
+                                    <Link className="nav-link" to='/cart'>CART : {info.name.length}</Link>
                                 </li>
                                 <li className='nav-item'>
                                     <input type="text" placeholder='Search' className='p-2 rounded-pill' />

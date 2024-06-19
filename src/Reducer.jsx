@@ -1,7 +1,7 @@
 
 const initialData = {
-    prod_name : ['Apple iPhone 15 (Black, 128 GB)','Apple iPhone 15 (Black, 128 GB)'],
-    prod_rate : ['₹67,999'],
+    prod_name : ['Apple iPhone 15 (Black, 128 GB)','Samsung Galaxy Tab S6 Lite 26.31 cm (10.4 inch), S-Pen in Box, Slim and Light, Dolby Atmos Sound, 4 GB RAM, 64 GB ROM, Wi-Fi Tablet, Gray'],
+    prod_rate : ['₹67,999','₹22,999'],
     prod_url : [''],
     prod_quantity : []
 }

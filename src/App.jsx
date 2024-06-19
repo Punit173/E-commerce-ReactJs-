@@ -15,6 +15,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
 import { createStore } from 'redux';
+import RootReducer from './RootReducer';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
     storage
   };
 
-  const persistred = persistReducer(persistconfig, Reducer);
+  const persistred = persistReducer(persistconfig, RootReducer);
 
   const store = createStore(persistred);
 
