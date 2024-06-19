@@ -28,9 +28,10 @@ const initialData = {
 const Reducer =  (state=initialData,action)=>{
     switch (action.type) {
         case 'Upload':
+            console.log(action.payload)
             return {
                 ...state,
-                items : [...initialData,action.payload]
+                items : [...state.items,action.payload]
             }
     
         default:

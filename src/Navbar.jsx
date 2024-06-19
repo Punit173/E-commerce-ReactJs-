@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 const Navbar = () => {
     const info = useSelector(store=>store.cartreducer);
-    console.log(info)
   return (
     <>
     <div>
