@@ -22,7 +22,7 @@ const Navbar = () => {
                                     <Link className="nav-link" to='/additem'>ADD ITEM</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to='/cart'>CART : {info.name.length}</Link>
+                                    <Link className="nav-link" to='/cart'>CART : {info.favitems.length}</Link>
                                 </li>
                                 <li className='nav-item'>
                                     <input type="text" placeholder='Search' className='p-2 rounded-pill' />

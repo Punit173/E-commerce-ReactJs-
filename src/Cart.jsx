@@ -2,42 +2,44 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartTable from './CartTable';
 import { useSelector } from 'react-redux'
-import CartTable1 from './CartTable1';
-import CartTable2 from './CartTable2';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+// import CartTable1 from './CartTable1';
+// import CartTable2 from './CartTable2';
 
 const Cart = () => {
-
-    const [itemname,setName] = useState('');
-
-    const infomatics = useSelector((store => store.cartreducer))
-    const compo = infomatics.name.map((e) => {
-        return <CartTable key={e.id} element={e} />
+    const infomatics = useSelector(store => store.cartreducer);
+    const dispatch = useDispatch();
+    console.log(infomatics);
+    const compo = infomatics.favitems.map((e) => {
+        return (
+            <tr>
+                <td>{e.itemName}</td>
+                <td>{e.itemPrice}</td>
+                <button
+                    onClick={() => {
+                        dispatch({ type: "Delete_item", payload: e });
+                    }}
+                    style={{ width: "100%" }}
+                    className="btn btn-danger"
+                >
+                    Delete
+                </button>
+            </tr>
+        )
     })
-    const compo1 = infomatics.price.map((e) => {
-        return <CartTable1 key={e.id} element={e} />
-    })
 
-    const compo2 = infomatics.price.map((e) => {
-        return <CartTable2 key={e.id} element={itemname} />
-    })
 
     return (
         <div style={{ padding: "50px" }}>
-        <table className="table table-success table-striped">
+            <table className="table table-success table-striped">
                 <thead>
                     <tr>
-                        <th>Product Name</th>
-                        <th>Product Rate</th>
-                        <th>Operation</th>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <td>{compo}</td>
-                    <td>{compo1}</td>
-                    <td>{compo2}</td>
-                    {/* <td style={{display:"flex",justifyContent:"center",backgroundColor:"#d1e7dd",padding:"50px"}}><button className='btn btn-danger'>Delete</button></td> */}
-                </tbody>
+                <tbody>{compo}</tbody>
             </table>
         </div>
     );

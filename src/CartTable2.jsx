@@ -8,7 +8,6 @@ const CartTable2 = (Props) => {
 
     const update = ()=>{
         alert("Item deleted from cart successfully!!");
-        console.log(Props.itemname);
         dispatch({type:"Delete_item",payload:Props.itemname})
     }
 
