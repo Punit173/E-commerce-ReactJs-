@@ -10,14 +10,15 @@ const AddItem = () => {
     const [price,setPrice] = useState ('');
 
     const information = {
-        name : name,
-        url : url,
-        price : price
+        itemName : name,
+        itemImage : url,
+        itemPrice : price
     }
 
     const update = ()=>{
         alert("Data uploaded successfully!!");
         dispatch({type:'Upload',payload:information})
+        console.log(information)
     }
 
     return (
@@ -44,7 +45,7 @@ const AddItem = () => {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" htmlFor="exampleCheck1">Agree to <a href="">Terms & Conditions</a></label>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={update}>Upload</button>
+                <button type="submit" className="btn btn-primary" onClick={update} >Upload</button>
             </form>
 
         </div>

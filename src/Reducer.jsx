@@ -1,9 +1,27 @@
 
 const initialData = {
-    prod_name : ['Apple iPhone 15 (Black, 128 GB)','Samsung Galaxy Tab S6 Lite 26.31 cm (10.4 inch), S-Pen in Box, Slim and Light, Dolby Atmos Sound, 4 GB RAM, 64 GB ROM, Wi-Fi Tablet, Gray'],
-    prod_rate : ['₹67,999','₹22,999'],
-    prod_url : [''],
-    prod_quantity : []
+    items: [
+        {
+          itemName: "GoPro HERO12 Waterproof Action Camera with Front & Rear LCD Screens",
+          itemImage: "https://m.media-amazon.com/images/I/41dr2z-ClFL._SX300_SY300_QL70_FMwebp_.jpg",
+          itemPrice: "₹36,990",
+        },
+        {
+          itemName: "Samsung Galaxy Tab S9 FE 27.69 cm (10.9 inch) Display, RAM 6 GB, ROM 128 GB Expandable",
+          itemImage: "https://m.media-amazon.com/images/I/31+JRXdZbeL._SY300_SX300_.jpg",
+          itemPrice: "₹34,999",
+        },
+        {
+          itemName: "realme NARZO N63 (Leather Blue, 4GB RAM+64GB Storage) 45W Fast Charge ",
+          itemImage: "https://m.media-amazon.com/images/I/81JjTw28j8L._SL1500_.jpg",
+          itemPrice: "₹8,498",
+        },
+        {
+          itemName: "Redmi A3 (Olive Green, 3GB RAM, 64GB Storage) | Premium Halo Design | 90Hz Display | Powerful 4G G36 Processor",
+          itemImage: "https://m.media-amazon.com/images/I/41jNSbEamYL._SX300_SY300_QL70_FMwebp_.jpg",
+          itemPrice: "₹6,999",
+        },
+      ],
 }
 
 
@@ -12,9 +30,7 @@ const Reducer =  (state=initialData,action)=>{
         case 'Upload':
             return {
                 ...state,
-                prod_name : [...state,action.payload.name],
-                prod_rate : [...state,action.payload.price],
-                prod_url : [...state,action.payload.url] 
+                items : [...initialData,action.payload]
             }
     
         default:
