@@ -28,13 +28,20 @@ const initialCart = {
 const CartReducer = (state = initialCart, action) => {
 
     switch (action.type) {
+        case 'Add_cart':
+            return {
+                ...state,
+                favitems: [...state.favitems, action.payload],
+            }
         case 'Delete_item':
             return {
                 ...state,
                 favitems: state.favitems.filter((item) => item.itemName != action.payload.itemName)
             }
 
+
         default:
+            return state;
             break;
     }
 
