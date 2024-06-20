@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 const Navbar = () => {
     const info = useSelector(store=>store.cartreducer);
   return (
-    <>
     <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-info">
                     <div className="container-fluid">
@@ -32,7 +31,6 @@ const Navbar = () => {
                     </div>
                 </nav>
             </div>
-    </>
   )
 }
 
