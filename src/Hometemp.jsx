@@ -1,5 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIndianRupee, faRupee } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const Hometemp = (Props) => {
@@ -18,7 +21,7 @@ const Hometemp = (Props) => {
                 <img src={Props.element.itemImage} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{Props.element.itemName}</h5>
-                    <h5 className="card-title">{Props.element.itemPrice}</h5>
+                    <h5 className="card-title"><FontAwesomeIcon icon={faIndianRupee} /> {Props.element.itemPrice}</h5>
                     <a href="#" className="btn btn-primary" onClick={addcart}>Add to Cart</a>
                 </div>
             </div>

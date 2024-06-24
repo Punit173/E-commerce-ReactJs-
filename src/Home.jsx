@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Hometemp from './Hometemp'
 
+
 const Home = () => {
 
   const favlist = useSelector(store => store.reducer)
